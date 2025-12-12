@@ -1,0 +1,88 @@
+{
+  "company_name": "AxleWave Technologies",
+  "product_name": "DealerFlow Cloud",
+  "industry": "Automotive Dealership Management",
+  "product_type": "Cloud-based Dealer Management System (DMS)",
+  "product_description": "\n            DealerFlow Cloud is a comprehensive cloud-based dealership management system\n            designed for automotive dealerships. It provides end-to-end solutions for\n            managing dealership operations including customer management, vehicle inventory,\n            sales processes, service operations, and accounting.\n            ",
+  "key_features": [
+    "Customer Relationship Management (CRM)",
+    "Vehicle Inventory Management with VIN decoding",
+    "Deal Desking and Contracting",
+    "Service Repair Order (RO) Management",
+    "General Ledger and Accounting",
+    "API-first architecture with REST APIs",
+    "OAuth2 and OIDC authentication",
+    "Real-time webhooks for key events",
+    "Multi-location support"
+  ],
+  "api_capabilities": [
+    "Customer CRUD and search operations",
+    "Vehicle management with VIN decode",
+    "Deal management (desking, contracting)",
+    "Repair Order lifecycle management",
+    "Accounting and general ledger integration",
+    "Webhook events for real-time updates"
+  ],
+  "target_customers": {
+    "primary": [
+      "Automotive franchise dealerships",
+      "Multi-location dealer groups",
+      "Used car dealerships",
+      "Auto retail chains"
+    ],
+    "characteristics": [
+      "Need modern cloud-based DMS",
+      "Managing multiple locations",
+      "Want to replace legacy on-premise systems",
+      "Require integrated sales and service operations",
+      "Need API integrations with other systems"
+    ]
+  },
+  "potential_partners": {
+    "categories": [
+      "Payment Processing Companies",
+      "VIN Data Providers",
+      "Automotive Valuation Services (KBB, Black Book)",
+      "Credit Bureau & Financing Partners",
+      "Insurance Verification Services",
+      "Parts & Inventory Suppliers",
+      "CRM and Marketing Automation Platforms",
+      "Accounting Software Providers",
+      "Document Management Systems",
+      "Dealer Compliance & Regulatory Solutions"
+    ],
+    "integration_needs": [
+      "RESTful API compatibility",
+      "Webhook support",
+      "OAuth2/OIDC authentication",
+      "Real-time data synchronization"
+    ]
+  },
+  "competitors": [
+    "CDK Global",
+    "Reynolds & Reynolds",
+    "DealerSocket",
+    "Dealertrack (Cox Automotive)",
+    "Auto/Mate",
+    "PBS Systems"
+  ],
+  "value_propositions": [
+    "Cloud-native architecture (vs legacy on-premise)",
+    "Modern API-first design",
+    "Real-time data with webhooks",
+    "Easier integrations with third-party services",
+    "Lower total cost of ownership",
+    "Automatic updates and maintenance",
+    "Multi-location capabilities"
+  ],
+  "technical_stack": {
+    "authentication": "OIDC, OAuth2, mTLS",
+    "api_style": "RESTful",
+    "data_formats": "JSON",
+    "sdks": [
+      "JavaScript/TypeScript",
+      "Python"
+    ],
+    "integration": "Webhooks, OpenAPI spec"
+  }
+}

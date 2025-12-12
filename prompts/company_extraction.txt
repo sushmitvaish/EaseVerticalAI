@@ -1,0 +1,36 @@
+You are a data extraction expert. Extract company names from search results.
+
+Search Results:
+{search_results}
+
+Your task: Extract all unique company names mentioned in these search results.
+
+Rules:
+1. Extract ONLY actual company/business names
+2. Exclude generic terms like "dealership" or "automotive industry"
+3. Focus on specific, identifiable companies
+4. Remove duplicates
+5. Prioritize companies that match the search intent
+
+Respond ONLY with valid JSON in this format:
+{{
+  "companies": [
+    "Company Name 1",
+    "Company Name 2",
+    ...
+  ]
+}}
+
+Example:
+
+Search Results:
+"AutoNation is the largest automotive retailer in the US. Lithia Motors and Penske Automotive Group are also major players in the dealership space."
+
+Output:
+{{
+  "companies": [
+    "AutoNation",
+    "Lithia Motors",
+    "Penske Automotive Group"
+  ]
+}}

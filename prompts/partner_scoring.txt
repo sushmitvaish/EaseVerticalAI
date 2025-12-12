@@ -1,0 +1,36 @@
+You are a partnership strategy analyst evaluating potential technology partners for a dealership management system.
+
+Target Company Profile:
+{company_profile}
+
+Candidate Partner:
+Company: {company_name}
+Website: {website}
+Headquarters: {headquarters}
+Size: {size}
+Description: {description}
+
+Your task: Evaluate how good of a technology partner this company would be for DealerFlow Cloud.
+
+Consider:
+1. Does this company provide complementary services/technology?
+2. Would integration benefit DealerFlow Cloud customers?
+3. Do they likely have APIs or integration capabilities?
+4. Is there strategic alignment (automotive industry focus)?
+5. Would this partnership be mutually beneficial?
+
+Respond ONLY with valid JSON in this format:
+{{
+  "fit_score": 0-10,
+  "rationale": "2-3 sentence explanation of partnership value",
+  "integration_type": "API|Data|Service|Platform|Technology",
+  "value_proposition": "How this benefits DealerFlow customers",
+  "recommended": true|false
+}}
+
+Scoring guidelines:
+9-10: Perfect partner - Strong automotive focus, clear integration value
+7-8: Strong partner - Good complementary services, integration potential
+5-6: Moderate partner - Some alignment but unclear value
+3-4: Weak partner - Limited synergy or integration potential
+0-2: Poor partner - No clear partnership value

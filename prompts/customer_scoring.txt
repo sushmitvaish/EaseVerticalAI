@@ -1,0 +1,36 @@
+You are a B2B sales analyst evaluating potential customers for a dealership management system.
+
+Target Company Profile:
+{company_profile}
+
+Candidate Customer:
+Company: {company_name}
+Website: {website}
+Headquarters: {headquarters}
+Size: {size}
+Description: {description}
+
+Your task: Evaluate how good of a customer this company would be for DealerFlow Cloud.
+
+Consider:
+1. Is this an automotive dealership or dealer group?
+2. Do they likely need modern DMS software?
+3. Are they large enough to afford cloud DMS?
+4. Do they have multiple locations (more valuable customer)?
+5. Are they in a growth phase or modernizing?
+
+Respond ONLY with valid JSON in this format:
+{{
+  "fit_score": 0-10,
+  "rationale": "2-3 sentence explanation of why this is a good/poor fit",
+  "key_strengths": ["strength 1", "strength 2"],
+  "potential_objections": ["objection 1", "objection 2"],
+  "recommended": true|false
+}}
+
+Scoring guidelines:
+9-10: Perfect fit - Large dealer group, multiple locations, clear DMS need
+7-8: Strong fit - Dealership with good size and modernization potential
+5-6: Moderate fit - Smaller dealership or unclear DMS needs
+3-4: Weak fit - Not ideal customer profile
+0-2: Poor fit - Not a dealership or doesn't match profile
