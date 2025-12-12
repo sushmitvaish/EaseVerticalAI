@@ -35,7 +35,7 @@ class Settings(BaseSettings):
     # Application Settings
     log_level: str = "INFO"
     cache_results: bool = True
-    max_companies_to_analyze: int = 30
+    max_companies_to_analyze: int = 50  # Increased to ensure we have enough after filtering
     top_n_results: int = 10
 
     # LLM Parameters
