@@ -12,12 +12,33 @@ Description: {description}
 
 Your task: Evaluate how good of a customer this company would be for DealerFlow Cloud.
 
-Consider:
-1. Is this an automotive dealership or dealer group?
-2. Do they likely need modern DMS software?
-3. Are they large enough to afford cloud DMS?
-4. Do they have multiple locations (more valuable customer)?
-5. Are they in a growth phase or modernizing?
+Consider (assign points for each):
+1. DEALERSHIP VERIFICATION (0-3 points):
+   - 3 points: Confirmed automotive dealer group (AutoNation, Penske)
+   - 2 points: Confirmed single dealership or dealer chain
+   - 1 point: Automotive retail but unclear if dealership
+   - 0 points: Not a dealership (parts supplier, OEM, software company)
+
+2. SIZE & SCALE (0-2 points):
+   - 2 points: Large dealer group (10+ locations) OR >$500M revenue
+   - 1 point: Medium (3-10 locations) OR $50M-$500M revenue
+   - 0 points: Single location OR <$50M revenue
+
+3. TECHNOLOGY READINESS (0-2 points):
+   - 2 points: Publicly traded, mentions digital transformation, modern operations
+   - 1 point: Established company with online presence
+   - 0 points: Small/traditional operation, unclear tech adoption
+
+4. MARKET POSITION (0-2 points):
+   - 2 points: Top 50 dealer group OR regional market leader
+   - 1 point: Established presence in market
+   - 0 points: Unknown or startup
+
+5. GROWTH INDICATORS (0-1 point):
+   - 1 point: Recent acquisitions, expanding locations, hiring
+   - 0 points: Stable/declining or unknown
+
+TOTAL SCORE: Sum all points (0-10)
 
 Respond ONLY with valid JSON in this format:
 {{
@@ -29,8 +50,8 @@ Respond ONLY with valid JSON in this format:
 }}
 
 Scoring guidelines:
-9-10: Perfect fit - Large dealer group, multiple locations, clear DMS need
-7-8: Strong fit - Dealership with good size and modernization potential
-5-6: Moderate fit - Smaller dealership or unclear DMS needs
-3-4: Weak fit - Not ideal customer profile
+9-10: Perfect fit - Large dealer group with clear DMS need and budget
+7-8: Strong fit - Multi-location dealership with modernization potential
+5-6: Moderate fit - Smaller dealership or unclear fit
+3-4: Weak fit - Limited scale or unclear dealership status
 0-2: Poor fit - Not a dealership or doesn't match profile

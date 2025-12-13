@@ -5,14 +5,17 @@ Company Profile:
 
 Your task: Generate search queries to discover automotive dealerships that would be ideal customers for this dealership management system.
 
-Consider:
+Consider (PRIORITIZE SPECIFIC DEALERSHIP NAMES):
 1. Types of dealerships (franchise, used car, dealer groups)
 2. Geographic locations (focus on major markets)
 3. Size indicators (multi-location, large operations)
 4. Companies likely using legacy systems
 5. Companies similar to known DMS users
 
-Generate 8-10 specific, targeted search queries that will help find these potential customers.
+CRITICAL: Focus on finding ACTUAL DEALERSHIP NAMES, not just industry information.
+Look for dealer groups like AutoNation, Penske, Lithia, Sonic Automotive, Group 1 Automotive.
+
+Generate 6-7 specific, targeted search queries that will help find these potential customers.
 
 Respond ONLY with valid JSON in this format:
 {{
@@ -26,9 +29,12 @@ Respond ONLY with valid JSON in this format:
 
 Make queries specific and actionable. Focus on finding actual company names, not just information about the industry.
 
-Examples of good queries:
-- "largest automotive dealership groups United States"
-- "top car dealer groups by revenue 2024"
-- "multi-location franchise car dealerships"
-- "automotive retail chains North America"
-- "dealerships similar to AutoNation Penske"
+Examples of EXCELLENT queries (focus on TOP dealer groups):
+- "AutoNation Penske Lithia Motors largest dealer groups"
+- "Group 1 Automotive Sonic Asbury dealer group locations"
+- "Hendrick Automotive Larry H Miller Ken Garff dealerships"
+- "publicly traded automotive dealership groups US"
+- "top 50 automotive dealer groups revenue 2024"
+- "CarMax Carvana dealership operations technology"
+
+CRITICAL: Focus on SPECIFIC DEALER GROUP NAMES to get accurate, high-quality results faster.

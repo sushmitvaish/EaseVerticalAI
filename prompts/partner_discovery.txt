@@ -5,19 +5,31 @@ Company Profile:
 
 Your task: Generate search queries to discover companies that could be technology partners for this dealership management system.
 
-Partner categories to consider:
-- Payment processing companies (for vehicle purchases)
-- VIN data providers and vehicle history services
-- Automotive valuation services (KBB, pricing guides)
-- Credit bureaus and financing partners
-- Insurance verification services
-- Parts suppliers and inventory management
-- CRM and marketing automation platforms
-- Accounting and ERP software providers
-- Document management and e-signature solutions
-- Compliance and regulatory technology providers
+Partner categories to consider (PRIORITIZE AUTOMOTIVE-SPECIFIC COMPANIES):
+- VIN decoding and vehicle history (Carfax, AutoCheck, NMVTIS)
+- Automotive valuation services (Kelley Blue Book, Black Book, NADA Guides)
+- F&I platforms (RouteOne, DealerTrack for financing and insurance)
+- Payment processing (automotive-specific like AccuTrade, not generic Stripe)
+- Credit bureaus with automotive APIs (Experian Auto, Equifax)
+- Inventory management (vAuto, PureCars, HomeNet)
+- Digital retailing platforms (Roadster, Upstart Auto Retail)
+- Dealership CRM (NOT general CRM - automotive-specific)
+- Document management with automotive compliance (DocuSign for Auto)
+- Parts and service platforms
 
-Generate 8-10 specific search queries to find potential partners in these categories.
+CRITICAL: Focus on companies that SPECIALIZE in automotive/dealership technology.
+Avoid generic software companies (like Stripe, HubSpot) unless they have automotive divisions.
+
+EXCLUSIONS - Never include these DMS competitors (add as negative search terms):
+- CDK Global, Reynolds and Reynolds, Quorum, DealerSocket, VinSolutions
+- Auto/Mate, PBS Systems, Tekion, Autosoft DMS, Dealer-FX, ProMax
+- DealerBuilt, Dominion, Frazer
+These companies compete with DealerFlow Cloud and should NEVER appear in results.
+
+Generate 7-8 specific search queries to find these AUTOMOTIVE-SPECIFIC partners.
+IMPORTANT:
+1. Ensure diversity - cover at least 4 different partner categories (e.g., 2 VIN/history, 2 valuation, 2 F&I, 2 inventory/CRM)
+2. Add exclusion operators to queries where possible (e.g., -"CDK Global" -"Reynolds")
 
 Respond ONLY with valid JSON in this format:
 {{
@@ -31,9 +43,24 @@ Respond ONLY with valid JSON in this format:
 
 Make queries specific to find actual company names with integration capabilities.
 
-Examples of good queries:
-- "automotive payment processing companies APIs"
-- "VIN decoding API providers"
-- "vehicle valuation data services integration"
-- "dealership credit application API services"
-- "automotive parts supplier API platforms"
+Examples of EXCELLENT queries (MUST cover different categories):
+
+VEHICLE HISTORY (1-2 queries):
+- "Carfax AutoCheck vehicle history API dealership integration"
+
+VALUATION SERVICES (1-2 queries):
+- "Kelley Blue Book Black Book NADA vehicle valuation API"
+- "J.D. Power NADA Guides automotive pricing data API"
+
+F&I PLATFORMS (1-2 queries):
+- "RouteOne F&I platform dealership financing"
+- "Dealertrack financing insurance dealership solutions"
+
+INVENTORY/CRM (1-2 queries):
+- "vAuto inventory management Cox Automotive"
+- "PureCars HomeNet dealership CRM marketing"
+
+CREDIT/COMPLIANCE (1-2 queries):
+- "Experian Automotive credit bureau API dealership"
+
+CRITICAL: Do NOT generate multiple queries for the same category. Ensure DIVERSITY across VIN/history, valuation, F&I, inventory, credit, and other categories.

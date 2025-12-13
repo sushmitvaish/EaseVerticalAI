@@ -5,12 +5,18 @@ Company Name: {company_name}
 Search Results:
 {search_results}
 
-Extract the following information:
-1. Official company website URL
-2. Headquarters location (city, state/country)
-3. Additional operating locations (if mentioned)
-4. Company size estimate (Small: <100 employees, Medium: 100-1000, Large: >1000)
-5. Brief description of what the company does
+Extract the following information (BE SPECIFIC, don't use "Unknown" unless truly not available):
+
+1. Official company website URL (must start with https://)
+2. Headquarters location (FULL FORMAT: "City, State, Country" - e.g., "Fort Lauderdale, Florida, United States")
+3. Additional operating locations (if mentioned - can be regions like "Nationwide US")
+4. Company size estimate:
+   - Look for: employee count, revenue, "Fortune 500", "publicly traded", "startup"
+   - Small: <100 employees OR <$10M revenue OR founded recently
+   - Medium: 100-1,000 employees OR $10M-$100M revenue
+   - Large: >1,000 employees OR >$100M revenue OR public company
+   - If NO data found, estimate from context (big brand = Large, niche = Medium/Small)
+5. Brief description emphasizing automotive/dealership relevance
 
 Respond ONLY with valid JSON in this format:
 {{

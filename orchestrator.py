@@ -149,52 +149,10 @@ class LeadGeneratorOrchestrator:
 
         logger.info(f"Selected top {len(top_companies)} {discovery_type}s")
 
-        # Step 4: Post-processing - Remove duplicates and filter competitors
-        top_companies = self._post_process_results(top_companies, discovery_type)
-        logger.info(f"After post-processing: {len(top_companies)} {discovery_type}s")
+        # Note: Filtering and deduplication already done during extraction (research_agent)
+        # No post-processing needed - results are clean!
 
         return top_companies
-
-    def _post_process_results(self, companies: List[Dict[str, Any]], discovery_type: str) -> List[Dict[str, Any]]:
-        """
-        Post-process results to remove duplicates and filter out inappropriate companies
-
-        Args:
-            companies: List of company dictionaries
-            discovery_type: "customer" or "partner"
-
-        Returns:
-            Filtered list of companies
-        """
-        # Define competitors (should never be customers)
-        competitors = {
-            'CDK Global', 'Reynolds and Reynolds', 'Reynolds & Reynolds',
-            'DealerSocket', 'Dealertrack', 'Auto/Mate', 'PBS Systems',
-            'AutoMate', 'Dealertrack DMS'
-        }
-
-        # Remove duplicates (keep first occurrence with highest score)
-        seen_names = set()
-        unique_companies = []
-
-        for company in companies:
-            company_name = company.get('company_name', '')
-
-            # Skip if duplicate
-            if company_name in seen_names:
-                logger.info(f"Removing duplicate: {company_name}")
-                continue
-
-            # Skip competitors if looking for customers
-            if discovery_type == "customer":
-                if any(comp.lower() in company_name.lower() for comp in competitors):
-                    logger.warning(f"Filtering out competitor from customer list: {company_name}")
-                    continue
-
-            seen_names.add(company_name)
-            unique_companies.append(company)
-
-        return unique_companies
 
     def _cache_results(self, results: Dict[str, Any], intent: str):
         """Cache results to file"""

@@ -103,9 +103,9 @@ def main():
         st.markdown("**Or choose a predefined query:**")
 
         predefined_queries = {
-            "Top 10 Potential Customers": "Find me the top 10 automotive dealerships that would benefit from DealerFlow Cloud",
-            "Top 10 Technology Partners": "Discover technology companies that could integrate with our dealership management platform",
-            "Both Customers and Partners": "Generate comprehensive lists of both potential customers and integration partners"
+            "Top 10 Potential Customers": "Find me 10 potential customers - automotive dealerships and dealer groups that would buy DealerFlow Cloud",
+            "Top 10 Technology Partners": "Find me 10 technology partners - companies like Carfax, RouteOne, or KBB that could integrate with DealerFlow Cloud",
+            "Both Customers and Partners": "Find me both customers (dealerships) and technology partners (integration companies)"
         }
 
         selected_query = st.selectbox("Select a query", list(predefined_queries.keys()))

@@ -12,12 +12,39 @@ Description: {description}
 
 Your task: Evaluate how good of a technology partner this company would be for DealerFlow Cloud.
 
-Consider:
-1. Does this company provide complementary services/technology?
-2. Would integration benefit DealerFlow Cloud customers?
-3. Do they likely have APIs or integration capabilities?
-4. Is there strategic alignment (automotive industry focus)?
-5. Would this partnership be mutually beneficial?
+Consider (assign points for each):
+1. AUTOMOTIVE SPECIALIZATION (0-3 points):
+   - 3 points: 100% automotive/dealership focused (Carfax, RouteOne, vAuto)
+   - 2 points: Has automotive division (Experian Auto, Stripe for Auto)
+   - 1 point: Serves automotive among other industries
+   - 0 points: Generic software, no automotive focus
+
+2. API/INTEGRATION CAPABILITIES (0-2 points):
+   - 2 points: Well-documented public APIs, webhook support
+   - 1 point: Has APIs but limited documentation
+   - 0 points: No clear API offering
+
+3. MARKET POSITION (0-2 points):
+   - 2 points: Industry leader/standard (KBB, Carfax, RouteOne)
+   - 1 point: Established player with good reputation
+   - 0 points: Unknown or startup
+
+4. COMPLEMENTARY VALUE (0-2 points):
+   - 2 points: Critical integration (VIN, F&I, valuation)
+   - 1 point: Nice-to-have integration (marketing, analytics)
+   - 0 points: Minimal value to dealerships
+
+5. COMPETITIVE RISK (0-1 point):
+   - 1 point: Pure technology provider, no DMS product
+   - 0 points: Also makes DMS software (competitor risk)
+
+DISQUALIFICATION - Assign score of 0 and recommended: false if ANY of these apply:
+- Company is primarily a DMS/dealership software provider (CDK Global, Reynolds & Reynolds, Quorum, DealerSocket, VinSolutions, Auto/Mate, etc.)
+- Company competes directly with DealerFlow Cloud's core functionality
+- Description mentions "dealership management system" or "DMS platform" as main product
+- Company name contains known DMS competitor names
+
+TOTAL SCORE: Sum all points (0-10), or 0 if disqualified
 
 Respond ONLY with valid JSON in this format:
 {{

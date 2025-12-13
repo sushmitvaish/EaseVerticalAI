@@ -148,16 +148,17 @@ class ResearchAgent:
         self, queries: List[str], max_companies: int
     ) -> List[str]:
         """
-        Execute searches and extract company names
+        Execute searches and extract company names with smart filtering
 
         Args:
             queries: List of search queries
             max_companies: Maximum companies to extract
 
         Returns:
-            List of unique company names
+            List of unique, filtered company names (no duplicates, no competitors)
         """
-        all_companies = set()
+        all_companies = []  # Changed from set to list to preserve order
+        seen_base_names = set()  # Track normalized names for fuzzy dedup
 
         for query in queries:
             try:
@@ -168,13 +169,19 @@ class ResearchAgent:
                 # Format results for LLM
                 results_text = self._format_search_results(search_results)
 
-                # Extract companies using LLM
+                # Extract companies using LLM (already filters competitors via prompt)
                 companies = self._extract_companies(results_text)
 
-                # Add to set (deduplication)
-                all_companies.update(companies)
+                # Smart filtering: competitors + fuzzy deduplication
+                for company in companies:
+                    # Apply comprehensive early filter
+                    if self._should_include_company(company, seen_base_names):
+                        all_companies.append(company)
+                        # Track normalized name
+                        base_name = self._normalize_company_name(company)
+                        seen_base_names.add(base_name)
 
-                logger.info(f"Extracted {len(companies)} companies from this search")
+                logger.info(f"Added {len(companies)} companies from this search (after filtering)")
 
                 # Check if we have enough
                 if len(all_companies) >= max_companies:
@@ -184,9 +191,9 @@ class ResearchAgent:
                 logger.error(f"Search failed for query '{query}': {e}")
                 continue
 
-        # Convert to list and limit
-        companies_list = list(all_companies)[:max_companies]
-        logger.info(f"Total unique companies extracted: {len(companies_list)}")
+        # Limit to max
+        companies_list = all_companies[:max_companies]
+        logger.info(f"Total unique companies after smart filtering: {len(companies_list)}")
 
         return companies_list
 
@@ -202,6 +209,7 @@ class ResearchAgent:
     def _extract_companies(self, search_results_text: str) -> List[str]:
         """
         Extract company names from search results using LLM
+        (LLM prompt already includes competitor filtering instructions)
 
         Args:
             search_results_text: Formatted search results
@@ -227,6 +235,65 @@ class ResearchAgent:
         except Exception as e:
             logger.error(f"Company extraction failed: {e}")
             return []
+
+    def _normalize_company_name(self, name: str) -> str:
+        """
+        Normalize company name for fuzzy duplicate detection
+
+        Args:
+            name: Company name
+
+        Returns:
+            Normalized name (lowercase, no suffixes/domains)
+        """
+        normalized = name.lower()
+
+        # Remove common suffixes and domains
+        suffixes = ['.com', '.net', '.io', '.org', '.co',
+                   ' inc.', ' inc', ' llc', ' ltd', ' limited',
+                   ' corporation', ' corp', ' corp.',
+                   ' company', ' co.', ' group', ' holdings']
+
+        for suffix in suffixes:
+            normalized = normalized.replace(suffix, '')
+
+        return normalized.strip()
+
+    def _should_include_company(self, company_name: str, seen_base_names: set) -> bool:
+        """
+        Comprehensive filter: Check if company should be included
+        Combines competitor filtering + fuzzy duplicate detection
+
+        Args:
+            company_name: Company name to check
+            seen_base_names: Set of already seen normalized names
+
+        Returns:
+            True if company should be included, False otherwise
+        """
+        # DMS competitors list
+        dms_competitors = {
+            'CDK Global', 'Reynolds and Reynolds', 'Reynolds & Reynolds',
+            'DealerSocket', 'Dealertrack DMS', 'Auto/Mate', 'PBS Systems',
+            'AutoMate', 'Quorum', 'Quorum Information Technologies',
+            'DealerBuilt', 'Dominion', 'VinSolutions', 'Frazer',
+            'Tekion', 'Autosoft DMS', 'Dealer-FX', 'ProMax'
+        }
+
+        # Check 1: Is it a DMS competitor?
+        is_competitor = any(comp.lower() in company_name.lower() for comp in dms_competitors)
+        if is_competitor:
+            logger.info(f"Smart filter: Removing DMS competitor '{company_name}'")
+            return False
+
+        # Check 2: Is it a fuzzy duplicate?
+        base_name = self._normalize_company_name(company_name)
+        if base_name in seen_base_names:
+            logger.info(f"Smart filter: Removing fuzzy duplicate '{company_name}' (base: {base_name})")
+            return False
+
+        # Passed all checks
+        return True
 
 
 # Global instance

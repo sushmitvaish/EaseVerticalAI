@@ -11,6 +11,14 @@ Rules:
 3. Focus on specific, identifiable companies
 4. Remove duplicates
 5. Prioritize companies that match the search intent
+6. **CRITICAL - NEVER include these DMS competitors** (they compete with our product):
+   - CDK Global, Reynolds and Reynolds, Reynolds & Reynolds
+   - Quorum, Quorum Information Technologies
+   - DealerSocket, VinSolutions
+   - Auto/Mate, AutoMate, PBS Systems
+   - Tekion, Autosoft DMS, Dealer-FX, ProMax
+   - DealerBuilt, Dominion, Frazer
+   - Dealertrack DMS (note: "Dealertrack" F&I is OK, but "Dealertrack DMS" is not)
 
 Respond ONLY with valid JSON in this format:
 {{
