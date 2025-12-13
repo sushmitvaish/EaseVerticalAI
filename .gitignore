@@ -45,7 +45,6 @@ data/prompt_logs/
 lead_generator.log
 
 # Cache
-data/results_cache/
 *.cache
 .cache/
 

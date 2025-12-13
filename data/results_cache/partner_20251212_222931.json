@@ -1,0 +1,146 @@
+{
+  "partners": [
+    {
+      "company_name": "Kelley Blue Book",
+      "website": "https://www.kbb.com",
+      "headquarters": "Irvine, California, United States",
+      "locations": [],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Kelley Blue Book is a leading provider of automotive information and has well-documented APIs, making it an ideal partner for DealerFlow Cloud.",
+      "recommended": true,
+      "integration_type": "Data",
+      "value_proposition": "Integrating with Kelley Blue Book will provide DealerFlow customers with accurate vehicle valuations, enhancing their sales processes."
+    },
+    {
+      "company_name": "Cox Automotive",
+      "website": "https://www.coxautoinc.com/",
+      "headquarters": "Atlanta, Georgia, United States",
+      "locations": [
+        "Atlanta",
+        "Austin",
+        "Euless",
+        "Mission"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Cox Automotive is a leading automotive services and technology provider with industry-focused brands that offer complementary value to DealerFlow Cloud's dealership management system.",
+      "recommended": true,
+      "integration_type": "Service",
+      "value_proposition": "Integrating with Cox Automotive can provide DealerFlow customers access to valuable services such as VIN data, automotive valuation, credit bureau & financing, insurance verification, and parts & inventory suppliers."
+    },
+    {
+      "company_name": "RouteOne",
+      "website": "https://www.routeone.com",
+      "headquarters": "Farmington Hills, Michigan, United States",
+      "locations": [],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "RouteOne is a well-established player in the automotive industry and offers payment processing services, which are critical integrations for dealerships. Their F&I process focus aligns well with DealerFlow Cloud's deal management capabilities.",
+      "recommended": true,
+      "integration_type": "Service",
+      "value_proposition": "Integrating RouteOne's payment processing services can streamline the financing process for DealerFlow customers, improving efficiency and customer satisfaction."
+    },
+    {
+      "company_name": "Copart, Inc.",
+      "website": "https://www.copart.com",
+      "headquarters": "Dallas, Texas, United States",
+      "locations": [
+        "Dallas, TX",
+        "Global (over 200 locations in 11 countries)"
+      ],
+      "size": "Large",
+      "fit_score": 8,
+      "rationale": "Copart is a global leader in the automotive industry and offers online vehicle auctions, which complements DealerFlow Cloud's dealership management system by providing a potential source for used vehicle inventory.",
+      "recommended": true,
+      "integration_type": "Service",
+      "value_proposition": "Integrating Copart's services can help DealerFlow customers expand their used vehicle inventory and potentially increase sales."
+    },
+    {
+      "company_name": "DriveCentric",
+      "website": "https://www.drivecentric.com",
+      "headquarters": "St. Louis, Missouri, United States",
+      "locations": [
+        "Saint Louis, MO"
+      ],
+      "size": "Medium",
+      "fit_score": 8,
+      "rationale": "DriveCentric is a leading provider of CRM platforms for the automotive industry, which aligns well with DealerFlow Cloud's focus on dealership management. They offer API/integration capabilities and their services complement DealerFlow's core functionality.",
+      "recommended": true,
+      "integration_type": "API|Service",
+      "value_proposition": "Integrating DriveCentric's CRM platform can enhance customer relationship management for DealerFlow customers, potentially improving sales and service operations."
+    },
+    {
+      "company_name": "VinAudit",
+      "website": "https://www.vinaudit.com",
+      "headquarters": "Kirkland, Washington, United States",
+      "locations": [],
+      "size": "Medium",
+      "fit_score": 8,
+      "rationale": "VinAudit is a medium-sized company that specializes in automotive solutions for dealerships and consumers, making it a good fit as a technology partner.",
+      "recommended": true,
+      "integration_type": "Data",
+      "value_proposition": "Integrating with VinAudit can provide DealerFlow customers with access to accurate VIN data, enhancing the overall functionality of the dealership management system."
+    },
+    {
+      "company_name": "Experian plc",
+      "website": "https://www.experian.com",
+      "headquarters": "Dublin, Ireland",
+      "locations": [
+        "Toronto, Ontario Canada",
+        "2 Cumberland Place Fenian Street",
+        "720 Cool Springs Blvd., Suite 200, Franklin, TN 37067",
+        "1301 South MoPac Expressway, Suite 110, Austin, TX\u00a0 78746",
+        "1760 Creekside Oaks Dr., Suite 200, Sacramento, CA 95833",
+        "1 San Antonio, TX. 601 NW Loop 410, Suite 450, San Antonio, TX 78216",
+        "Woodfield Rd, Suite 500, Schaumburg, IL 60173"
+      ],
+      "size": "Large",
+      "fit_score": 8,
+      "rationale": "Experian plc has an automotive division and offers complementary services such as credit bureau & financing partners, which are critical integrations for dealerships.",
+      "recommended": true,
+      "integration_type": "Service",
+      "value_proposition": "Integrating with Experian can provide DealerFlow customers with access to accurate credit reports and financing solutions, enhancing their ability to make informed decisions during the sales process."
+    },
+    {
+      "company_name": "Carfax",
+      "website": "https://www.carfax.com",
+      "headquarters": "Centreville, Virginia, United States",
+      "locations": [],
+      "size": "Medium",
+      "fit_score": 8,
+      "rationale": "Carfax has a strong focus on the automotive industry and offers comprehensive vehicle history reports, which is a critical integration for dealerships.",
+      "recommended": true,
+      "integration_type": "Data",
+      "value_proposition": "Integrating Carfax will provide DealerFlow customers with access to accurate and detailed vehicle history information, enhancing their ability to make informed decisions during the sales process."
+    },
+    {
+      "company_name": "AutoCheck",
+      "website": "https://www.autocheck.com",
+      "headquarters": "Schaumburg, Illinois, United States",
+      "locations": [
+        "Houston, Texas, United States"
+      ],
+      "size": "Medium",
+      "fit_score": 8,
+      "rationale": "AutoCheck specializes in vehicle history reports, a critical integration for dealerships. They have well-documented APIs and are an established player in the automotive industry.",
+      "recommended": true,
+      "integration_type": "Data",
+      "value_proposition": "Integrating AutoCheck's vehicle history reports can help DealerFlow customers make informed decisions about vehicle purchases, improving their overall service."
+    },
+    {
+      "company_name": "Black Book",
+      "website": "https://www.hearst.com/black-book",
+      "headquarters": "Lawrenceville, Georgia, United States",
+      "locations": [
+        "1745 N Brown Rd #130, Lawrenceville, GA 30043"
+      ],
+      "size": "Medium",
+      "fit_score": 8,
+      "rationale": "Black Book specializes in automotive valuation and insights, making it a strong complementary partner for DealerFlow Cloud.",
+      "recommended": true,
+      "integration_type": "Data",
+      "value_proposition": "Integrating Black Book's vehicle valuation services can provide DealerFlow customers with accurate and up-to-date market data for their inventory management."
+    }
+  ]
+}

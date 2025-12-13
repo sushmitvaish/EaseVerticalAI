@@ -1,0 +1,230 @@
+{
+  "customers": [
+    {
+      "company_name": "AutoNation Inc.",
+      "website": "https://www.autonation.com",
+      "headquarters": "Fort Lauderdale, Florida, United States",
+      "locations": [
+        "Fort Lauderdale, Florida"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "AutoNation Inc. is a large automotive dealer group with multiple locations and a clear need for a modern cloud-based DMS to manage their operations.",
+      "recommended": true,
+      "key_strengths": [
+        "Large scale dealership",
+        "Clear need for a modern DMS"
+      ],
+      "potential_objections": [
+        "Possible complexity in implementation due to size",
+        "Existing relationships with competitors"
+      ]
+    },
+    {
+      "company_name": "Penske Automotive Group",
+      "website": "https://www.penskeautomotive.com/",
+      "headquarters": "Bloomfield Hills, Michigan, United States",
+      "locations": [
+        "United States",
+        "United Kingdom",
+        "Canada",
+        "Germany",
+        "Italy",
+        "Japan",
+        "Australia"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Penske Automotive Group is a large dealer group with multiple locations and a clear need for a modern cloud-based DMS to manage their operations.",
+      "recommended": true,
+      "key_strengths": [
+        "Large scale dealership",
+        "Clear need for a modern DMS"
+      ],
+      "potential_objections": [
+        "Potential complexity in implementing the system across multiple locations"
+      ]
+    },
+    {
+      "company_name": "Lithia Motors Inc.",
+      "website": "https://www.lithiadriveway",
+      "headquarters": "Medford, Oregon, United States",
+      "locations": [
+        "Nationwide US"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Lithia Motors Inc. is one of the nation's largest automotive retailers with over 300 stores supporting more than 50 automotive brands, making them a perfect fit for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Large scale operation",
+        "Managing multiple locations"
+      ],
+      "potential_objections": [
+        "Possible complexity in implementation due to the size of the company"
+      ]
+    },
+    {
+      "company_name": "DCH Auto Group",
+      "website": "https://www.lithia.com/dch-auto-group/index.htm",
+      "headquarters": "South Amboy, New Jersey, United States",
+      "locations": [],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "DCH Auto Group is a large automotive retail company managing multiple locations, making them an ideal customer for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Managing multiple locations",
+        "Potential need to replace legacy on-premise systems"
+      ],
+      "potential_objections": [
+        "Possible resistance to change from existing software providers"
+      ]
+    },
+    {
+      "company_name": "Wilde Auto Group",
+      "website": "https://www.wildeauto.com",
+      "headquarters": "Waukesha, Wisconsin, United States",
+      "locations": [
+        "Madison, WI",
+        "West Allis, WI",
+        "Nationwide US"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Wilde Auto Group is a large automotive group operating multiple dealerships in Wisconsin and nationwide, making them an ideal customer for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Managing multiple locations",
+        "Requires integrated sales and service operations"
+      ],
+      "potential_objections": [
+        "Possible resistance to change from existing on-premise systems"
+      ]
+    },
+    {
+      "company_name": "Sonic Automotive Inc.",
+      "website": "https://www.sonicautomotive.com/",
+      "headquarters": "Charlotte, North Carolina, United States",
+      "locations": [
+        "More than 180 dealership franchises nationwide"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Sonic Automotive Inc. is a large dealer group representing nearly 40 different brands and managing over 180 dealership franchises, making them an ideal customer for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Large scale operation",
+        "Managing multiple locations"
+      ],
+      "potential_objections": [
+        "Possible resistance to change from existing systems",
+        "Complexity of integrating with existing software ecosystem"
+      ]
+    },
+    {
+      "company_name": "Group 1 Automotive",
+      "website": "https://www.group1auto.com",
+      "headquarters": "Houston, Texas, United States",
+      "locations": [
+        "Nationwide US"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Group 1 Automotive is a large automotive retailer with over 10,000 employees and multiple locations, making them an ideal candidate for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Large scale operation",
+        "Clear need for modern cloud-based DMS"
+      ],
+      "potential_objections": [
+        "Possible resistance to change from existing systems",
+        "Complexity of migration due to size and multiple locations"
+      ]
+    },
+    {
+      "company_name": "Future Automotive Group",
+      "website": "https://www.futureautomotive.com",
+      "headquarters": "Roseville, California, United States",
+      "locations": [
+        "Greater Sacramento Region",
+        "Fairfield",
+        "Concord",
+        "Fresno/Clovis"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Future Automotive Group is a large dealer group with multiple locations in California, making them a perfect fit for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Managing multiple locations",
+        "Requires integrated sales and service operations"
+      ],
+      "potential_objections": [
+        "Possible resistance to change from existing on-premise systems"
+      ]
+    },
+    {
+      "company_name": "Holman Automotive Group, Inc.",
+      "website": "https://www.holmanauto.com",
+      "headquarters": "Mount Laurel, NJ, United States",
+      "locations": [
+        "4001 Leadenhall Road Mount Laurel, NJ 08054 United States",
+        "2550 SW Grapevine Pkwy, Suite 100Grapevine, TX 76051",
+        "1270 Central Parkway West, Suite 600",
+        "17010 103 Avenue, Suite 180",
+        "1420 Brewster Creek BlvdBartlett, IL 60103",
+        "237 8th Ave SE, Unit #700",
+        "Canada Headquarters",
+        "Holman \u2013 Edmonton Office",
+        "Holman \u2013 Puerto Rico Montehiedra Office Centre",
+        "Holman \u2013 Bartlett Corporate Office, Graphics, & Facility",
+        "Holman \u2013 Mississauga Facility",
+        "Holman \u2013 Rancho Cordova Sales Office",
+        "Holman Powertrain \u2013 Massachusetts",
+        "Holman Powertrain \u2013 Michigan",
+        "Holman Powertrain \u2013 New York",
+        "Holman Powertrain \u2013 Pennsauken",
+        "Holman Powertrain \u2013 Pennsauken (UNION)",
+        "Holman Powertrain \u2013 Pennsylvania",
+        "Holman Insurance Services \u2013 Maple Shade",
+        "Holman Ford Lincoln Maple Shade",
+        "Holman Ford Lincoln Maple Shade (Union)",
+        "Service Activity Center \u2013 San Diego"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Holman Automotive Group is a large automotive group with multiple locations, making them an ideal customer for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Managing multiple locations",
+        "Requires integrated sales and service operations"
+      ],
+      "potential_objections": [
+        "Possible resistance to change from existing systems",
+        "Complexity of migration from legacy on-premise systems"
+      ]
+    },
+    {
+      "company_name": "CarMax Inc.",
+      "website": "https://www.carmax.com",
+      "headquarters": "Richmond, Virginia, United States",
+      "locations": [
+        "Nationwide US"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "CarMax is a major player in the automotive retail sector operating nationwide, making it an ideal customer for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Managing multiple locations",
+        "Requires integrated sales and service operations",
+        "Need API integrations with other systems"
+      ],
+      "potential_objections": [
+        "Possible resistance to change from existing system",
+        "Complexity of migration due to scale"
+      ]
+    }
+  ]
+}
