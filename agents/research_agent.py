@@ -239,12 +239,13 @@ class ResearchAgent:
     def _normalize_company_name(self, name: str) -> str:
         """
         Normalize company name for fuzzy duplicate detection
+        Extracts parent company identifier to catch subsidiaries
 
         Args:
             name: Company name
 
         Returns:
-            Normalized name (lowercase, no suffixes/domains)
+            Normalized parent company identifier
         """
         normalized = name.lower()
 
@@ -257,7 +258,27 @@ class ResearchAgent:
         for suffix in suffixes:
             normalized = normalized.replace(suffix, '')
 
-        return normalized.strip()
+        normalized = normalized.strip()
+
+        # Extract parent company name (first significant word)
+        # This catches: "AutoNation Honda Chandler" -> "autonation"
+        #              "Lithia & Driveway" -> "lithia"
+        #              "Penske Automotive Group" -> "penske"
+
+        # Remove common connecting words
+        connecting_words = [' and ', ' & ', ' the ', ' of ', ' at ']
+        for word in connecting_words:
+            normalized = normalized.replace(word, ' ')
+
+        # Get first word as parent identifier
+        words = normalized.split()
+        if words:
+            parent_name = words[0]
+            # Filter out very short words (likely not company names)
+            if len(parent_name) > 2:
+                return parent_name
+
+        return normalized
 
     def _should_include_company(self, company_name: str, seen_base_names: set) -> bool:
         """
