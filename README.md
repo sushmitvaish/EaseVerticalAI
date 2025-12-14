@@ -4,7 +4,7 @@ An AI-powered B2B lead generation system that discovers potential customers and 
 
 ## 🎯 What It Does
 
-Uses **open-source LLMs** (Llama 3.1 / Mistral 7B) and multi-agent architecture to intelligently discover and evaluate:
+Uses **open-source LLMs** (Mistral 7B / Llama 3.1) and multi-agent architecture to intelligently discover and evaluate:
 
 - **Top 10 Potential Customers**: Automotive dealerships likely to buy DealerFlow Cloud
 - **Top 10 Potential Partners**: Technology companies that could integrate with the platform
@@ -13,7 +13,7 @@ Uses **open-source LLMs** (Llama 3.1 / Mistral 7B) and multi-agent architecture 
 
 ✅ **Natural Language Interface** - Specify requirements in plain English
 ✅ **Multi-Agent System** - 5 specialized AI agents working together
-✅ **Open-Source LLMs** - Llama 3.1 / Mistral 7B via Ollama
+✅ **Open-Source LLMs** - Mistral 7B / Llama 3.1 via Ollama
 ✅ **AI-Optimized Search** - Tavily API (1,000 free searches/month)
 ✅ **Prompt Tracing** - Track and optimize LLM interactions
 ✅ **Smart Filtering** - Parent/subsidiary detection, competitor exclusion
@@ -31,7 +31,10 @@ Uses **open-source LLMs** (Llama 3.1 / Mistral 7B) and multi-agent architecture 
 ```bash
 # 1. Install Ollama
 brew install ollama  # macOS
-ollama pull llama3.1:8b
+ollama pull mistral:7b
+
+# To run if already installed
+ollama serve
 
 # 2. Clone and setup
 git clone <your-repo-url>
@@ -77,42 +80,13 @@ Top 10 Results (JSON)
 
 ### Technology Stack
 
-- **LLM**: Ollama (Llama 3.1 8B / Mistral 7B)
+- **LLM**: Ollama (Mistral 7B / Llama 3.1 8B)
 - **Search**: Tavily AI (AI-optimized for LLMs)
 - **UI**: Streamlit
 - **Language**: Python 3.9+
 - **Caching**: JSON-based results cache
 
-## 📊 Sample Results
-
-### Customer Results
-```json
-{
-  "company_name": "AutoNation Inc.",
-  "website": "https://www.autonation.com",
-  "headquarters": "Fort Lauderdale, Florida, United States",
-  "size": "Large",
-  "fit_score": 9,
-  "rationale": "AutoNation is the largest automotive retailer...",
-  "recommended": true
-}
-```
-
-### Partner Results
-```json
-{
-  "company_name": "Carfax",
-  "website": "https://www.carfax.com",
-  "headquarters": "Centreville, Virginia, United States",
-  "size": "Medium",
-  "fit_score": 8,
-  "rationale": "Carfax provides critical vehicle history...",
-  "integration_type": "Data",
-  "value_proposition": "Integrating Carfax will provide..."
-}
-```
-
-See [cached results](data/results_cache/) for complete examples.
+See data/results_cache/ for complete results.
 
 ## 📁 Project Structure
 
@@ -168,7 +142,7 @@ Edit `.env` file:
 ```bash
 # LLM
 OLLAMA_BASE_URL=http://localhost:11434
-OLLAMA_MODEL=llama3.1:8b
+OLLAMA_MODEL=mistral:7b
 
 # Search
 TAVILY_API_KEY=your_key_here
@@ -238,7 +212,7 @@ python -m agents.scoring_agent
 **Ollama not running:**
 ```bash
 ollama serve
-ollama list  # Should show llama3.1:8b
+ollama list  # Should show mistral:7b
 ```
 
 **Tavily API errors:**
@@ -281,4 +255,4 @@ This is a prototype/assignment project. For questions or improvements, please op
 
 ---
 
-**Built with:** Ollama (Llama 3.1) • Tavily AI • Streamlit • Python 3.9+
+**Built with:** Ollama (Mistral 7B) • Tavily AI • Streamlit • Python 3.9+

@@ -24,13 +24,13 @@
 **macOS:**
 ```bash
 brew install ollama
-ollama pull llama3.1:8b
+ollama pull mistral:7b
 ```
 
 **Linux:**
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
-ollama pull llama3.1:8b
+ollama pull mistral:7b
 ```
 
 **Windows:**
@@ -142,7 +142,7 @@ Top 10 Results
 ### Technology Stack
 
 **LLM:**
-- Ollama (local) - Llama 3.1 (8B) or Mistral 7B
+- Ollama (local) - Mistral 7B or Llama 3.1 (8B)
 - HuggingFace (alternative)
 
 **Search:**
@@ -166,7 +166,7 @@ Edit `.env` file:
 ```bash
 # LLM Configuration
 OLLAMA_BASE_URL=http://localhost:11434
-OLLAMA_MODEL=llama3.1:8b
+OLLAMA_MODEL=mistral:7b
 
 # Search API
 TAVILY_API_KEY=your_tavily_key_here
@@ -325,7 +325,7 @@ ollama pull mistral:7b
 ```bash
 ollama serve
 # In new terminal:
-ollama list  # Should show llama3.1:8b
+ollama list  # Should show mistral:7b
 ```
 
 ### Tavily API Errors
@@ -355,8 +355,8 @@ ollama list  # Should show llama3.1:8b
 **Prompt engineering:** Study `data/prompt_logs/` to optimize prompts
 
 **Model selection:**
-- `llama3.1:8b` - Fast, good quality (recommended)
-- `mistral:7b` - Alternative
+- `mistral:7b` - Fast, good quality (recommended)
+- `llama3.1:8b` - Alternative
 - `mixtral:8x7b` - Slower but higher quality
 
 ---

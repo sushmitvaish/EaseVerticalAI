@@ -48,6 +48,7 @@ echo "Creating data directories..."
 mkdir -p data/axlewave_context
 mkdir -p data/results_cache
 mkdir -p data/prompt_logs
+mkdir -p data/logs
 
 # Initialize company context
 echo ""
@@ -62,7 +63,7 @@ echo ""
 echo "Next steps:"
 echo "1. Edit .env file with your configuration"
 echo "2. Install Ollama: brew install ollama (macOS) or visit https://ollama.com"
-echo "3. Pull a model: ollama pull llama3.1:8b"
+echo "3. Pull a model: ollama pull mistral:7b"
 echo "4. Run the app: streamlit run app.py"
 echo ""
 echo "To activate the virtual environment in future sessions:"

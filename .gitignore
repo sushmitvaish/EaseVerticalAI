@@ -88,3 +88,6 @@ models/
 tmp/
 temp/
 *.tmp
+
+# Presentation files (generated from PRESENTATION.md)
+PRESENTATION.md

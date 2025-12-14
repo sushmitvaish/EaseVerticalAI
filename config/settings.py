@@ -10,7 +10,7 @@ class Settings(BaseSettings):
 
     # LLM Configuration
     ollama_base_url: str = "http://localhost:11434"
-    ollama_model: str = "llama3.1:8b"
+    ollama_model: str = "mistral:7b"
 
     huggingface_api_token: Optional[str] = None
     huggingface_model: str = "mistralai/Mistral-7B-Instruct-v0.2"

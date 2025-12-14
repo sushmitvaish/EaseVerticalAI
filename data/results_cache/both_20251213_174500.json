@@ -1,0 +1,344 @@
+{
+  "customers": [
+    {
+      "company_name": "AutoNation Inc.",
+      "website": "https://www.autonation.com",
+      "headquarters": "Fort Lauderdale, Florida, United States",
+      "locations": [
+        "Nationwide US"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "AutoNation is the largest automotive retailer in the United States, managing multiple locations and generating high revenue. They have a clear need for a modern cloud-based DMS to replace their legacy on-premise systems.",
+      "recommended": true,
+      "key_strengths": [
+        "Large scale operation",
+        "Clear need for a modern DMS"
+      ],
+      "potential_objections": [
+        "Possible complexity in implementation due to size",
+        "Existing relationships with competitors"
+      ]
+    },
+    {
+      "company_name": "Penske Automotive Group",
+      "website": "https://www.penskeautomotive.com/",
+      "headquarters": "Bloomfield Hills, Michigan, United States",
+      "locations": [
+        "United States",
+        "United Kingdom",
+        "Canada",
+        "Germany",
+        "Italy",
+        "Japan",
+        "Australia"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Penske Automotive Group is a large dealer group with multiple locations across different countries, making them an ideal customer for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Managing multiple locations",
+        "Requires integrated sales and service operations"
+      ],
+      "potential_objections": [
+        "High implementation costs due to their size",
+        "Potential resistance to change from existing systems"
+      ]
+    },
+    {
+      "company_name": "Lithia Motors Inc.",
+      "website": "https://www.lithiadriveway",
+      "headquarters": "Medford, Oregon, United States",
+      "locations": [
+        "Nationwide US"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Lithia Motors Inc., being the largest automotive dealership group in the U.S., fits perfectly for DealerFlow Cloud as they manage multiple locations and are likely looking to replace their legacy on-premise systems with a modern cloud-based DMS.",
+      "recommended": true,
+      "key_strengths": [
+        "Large scale operation",
+        "Clear need for a modern cloud-based DMS"
+      ],
+      "potential_objections": [
+        "Possible resistance to change due to the size and complexity of their operations"
+      ]
+    },
+    {
+      "company_name": "Keyes Automotive Group",
+      "website": "https://www.keyescars.com/",
+      "headquarters": "Los Angeles, California, United States",
+      "locations": [
+        "Los Angeles, California, United States"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Keyes Automotive Group is a large dealer group with over 13 franchises and more than 1,000 employees, making them an ideal candidate for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Large scale operation",
+        "Managing multiple locations"
+      ],
+      "potential_objections": [
+        "Possible resistance to change from existing systems",
+        "Complexity of migration due to size and number of locations"
+      ]
+    },
+    {
+      "company_name": "Sonic Automotive Inc.",
+      "website": "https://www.sonicautomotive.com/",
+      "headquarters": "Charlotte, North Carolina, United States",
+      "locations": [
+        "More than 180 dealership franchises nationwide"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Sonic Automotive Inc. is a large dealer group representing nearly 40 different brands and managing over 180 dealership franchises, making them an ideal customer for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Large scale operation",
+        "Managing multiple locations"
+      ],
+      "potential_objections": [
+        "Possible resistance to change from existing systems",
+        "Complexity of integrating with existing software ecosystem"
+      ]
+    },
+    {
+      "company_name": "Group 1 Automotive",
+      "website": "https://www.group1auto.com",
+      "headquarters": "Houston, Texas, United States",
+      "locations": [
+        "Nationwide US"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Group 1 Automotive is a large automotive retailer with over 5,000 employees and multiple locations, making them an ideal customer for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Large scale operation",
+        "Clear need for modern cloud-based DMS"
+      ],
+      "potential_objections": [
+        "Possible resistance to change from existing systems",
+        "Complexity of integrating with their current setup due to size"
+      ]
+    },
+    {
+      "company_name": "DCH Auto Group",
+      "website": "https://www.dchautogroup.com/",
+      "headquarters": "South Amboy, New Jersey, United States",
+      "locations": [
+        "New Jersey, New York, Connecticut, California"
+      ],
+      "size": "Large",
+      "fit_score": 8,
+      "rationale": "DCH Auto Group is a large automotive dealership group managing multiple locations, making them an ideal customer for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Managing multiple locations",
+        "Requires integrated sales and service operations"
+      ],
+      "potential_objections": [
+        "Possible resistance to change from existing systems",
+        "Complexity of migrating data from legacy systems"
+      ]
+    },
+    {
+      "company_name": "Carbone Auto Group",
+      "website": "https://www.carbonecars.com",
+      "headquarters": "Troy, NY, United States",
+      "locations": [
+        "Utica/Rome, NY",
+        "Bennington, VT"
+      ],
+      "size": "Large",
+      "fit_score": 8,
+      "rationale": "Carbone Auto Group is a family-owned business since 1929 with multiple automotive dealerships in New York and Vermont, making them a multi-location dealer group. They have an online presence and are likely established in their market. Their size suggests they may need a modern cloud-based DMS to manage their operations.",
+      "recommended": true,
+      "key_strengths": [
+        "Multi-location dealer group",
+        "Established company with online presence"
+      ],
+      "potential_objections": [
+        "Possible resistance to change from legacy systems",
+        "Requires a comprehensive understanding of their current systems and processes"
+      ]
+    },
+    {
+      "company_name": "Carousel Auto Group",
+      "website": "https://www.carouselautogroup.com/",
+      "headquarters": "Iowa City, IA, United States",
+      "locations": [
+        "Iowa City, IA"
+      ],
+      "size": "Medium",
+      "fit_score": 8,
+      "rationale": "Carousel Auto Group is a confirmed automotive dealer group managing multiple locations and has an online presence, indicating technology readiness. They might be looking to replace legacy on-premise systems with a modern cloud-based DMS.",
+      "recommended": true,
+      "key_strengths": [
+        "Managing multiple locations",
+        "Online presence"
+      ],
+      "potential_objections": [
+        "Unclear size and scale of the group",
+        "Potential resistance to change from existing systems"
+      ]
+    },
+    {
+      "company_name": "DTLA Auto Group",
+      "website": "https://www.lithia.com/dtla-auto-group/index.htm",
+      "headquarters": "Los Angeles, California, United States",
+      "locations": [
+        "Los Angeles, California"
+      ],
+      "size": "Medium",
+      "fit_score": 8,
+      "rationale": "DTLA Auto Group is a reputable car dealership based in Los Angeles, CA, managing multiple locations, and has an online presence, making it a strong fit for DealerFlow Cloud.",
+      "recommended": true,
+      "key_strengths": [
+        "Managing multiple locations",
+        "Established company with online presence"
+      ],
+      "potential_objections": [
+        "Potential resistance to change from existing on-premise systems",
+        "Requires integration with other systems"
+      ]
+    }
+  ],
+  "partners": [
+    {
+      "company_name": "Kelley Blue Book",
+      "website": "https://www.kbb.com",
+      "headquarters": "Irvine, California, United States",
+      "locations": [],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Kelley Blue Book is a leading provider of automotive information and has well-documented APIs, making it an ideal partner for DealerFlow Cloud.",
+      "recommended": true,
+      "integration_type": "Data",
+      "value_proposition": "Integrating with Kelley Blue Book will provide DealerFlow customers with accurate vehicle valuations, enhancing their sales processes."
+    },
+    {
+      "company_name": "Cox Automotive",
+      "website": "https://www.coxautoinc.com/",
+      "headquarters": "Atlanta, Georgia, United States",
+      "locations": [
+        "Atlanta, United States",
+        "Austin, United States",
+        "Euless, United States",
+        "Mission, United States"
+      ],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "Cox Automotive is a leading automotive services and technology provider with well-documented APIs and webhook support, making it an ideal partner for DealerFlow Cloud.",
+      "recommended": true,
+      "integration_type": "API",
+      "value_proposition": "Integrating with Cox Automotive can provide DealerFlow customers with access to a wide range of complementary services such as payment processing, VIN data, automotive valuation, credit bureau & financing, insurance verification, parts & inventory suppliers, CRM and marketing automation platforms, accounting software, document management systems, dealer compliance & regulatory solutions."
+    },
+    {
+      "company_name": "RouteOne",
+      "website": "https://www.routeone.com",
+      "headquarters": "Farmington Hills, Michigan, United States",
+      "locations": [],
+      "size": "Large",
+      "fit_score": 9,
+      "rationale": "RouteOne specializes in the automotive industry and offers a critical integration for vehicle financing, making it a perfect partner for DealerFlow Cloud.",
+      "recommended": true,
+      "integration_type": "Service",
+      "value_proposition": "Improved F&I process and connection to finance sources for North America, enhancing dealership operations and customer experience."
+    },
+    {
+      "company_name": "Kenect LLC",
+      "website": "https://www.kenect.com",
+      "headquarters": "Pleasant Grove, Utah, United States",
+      "locations": [],
+      "size": "Medium",
+      "fit_score": 8,
+      "rationale": "Kenect LLC has a strong focus on the automotive industry and offers an AI-powered platform for messaging, payments, and more. The integration with DealerFlow Cloud could provide valuable services such as payment processing, customer reviews, and potentially marketing automation.",
+      "recommended": true,
+      "integration_type": "Platform",
+      "value_proposition": "Enhanced customer engagement and streamlined payment processes for DealerFlow customers."
+    },
+    {
+      "company_name": "Experian",
+      "website": "https://www.experianplc.com/",
+      "headquarters": "Costa Mesa, California, United States",
+      "locations": [
+        "Costa Mesa, California, United States",
+        "Nationwide US"
+      ],
+      "size": "Large",
+      "fit_score": 8,
+      "rationale": "Experian has a strong focus on the automotive industry and offers complementary services such as credit bureau, financing, and insurance verification which would greatly benefit DealerFlow Cloud customers.",
+      "recommended": true,
+      "integration_type": "Service",
+      "value_proposition": "Integrating Experian's services into DealerFlow Cloud will streamline the dealership's finance, insurance, and credit processes, improving efficiency and customer experience."
+    },
+    {
+      "company_name": "Black Book",
+      "website": "https://www.blackbook.com/",
+      "headquarters": "Lawrenceville, Georgia, United States",
+      "locations": [
+        "1745 North Brown Road #130, Lawrenceville, GA"
+      ],
+      "size": "Medium",
+      "fit_score": 8,
+      "rationale": "Black Book is a well-established player in the automotive industry and offers valuable services such as vehicle valuation. The integration of their data would provide DealerFlow Cloud customers with accurate and up-to-date vehicle pricing information.",
+      "recommended": true,
+      "integration_type": "Data",
+      "value_proposition": "Improved accuracy in inventory management, appraisals, and trade-in evaluations for dealerships."
+    },
+    {
+      "company_name": "Carwiser",
+      "website": "https://www.carwiser.com",
+      "headquarters": "San Diego, California, United States",
+      "locations": [],
+      "size": "Medium",
+      "fit_score": 8,
+      "rationale": "Carwiser is a software development company specializing in the automotive industry, offering complementary services such as payment processing and CRM/marketing automation platforms.",
+      "recommended": true,
+      "integration_type": "Platform",
+      "value_proposition": "Integrating Carwiser can provide DealerFlow customers with seamless payment processing and marketing automation solutions, enhancing their overall dealership management experience."
+    },
+    {
+      "company_name": "Carketa, Inc.",
+      "website": "https://system.privco.com/company/carketa",
+      "headquarters": "Lehi, Utah, United States",
+      "locations": [],
+      "size": "Medium",
+      "fit_score": 8,
+      "rationale": "Carketa is an automotive retail company that enhances profitability and streamlines operations for car dealerships, making it a good fit as a partner for DealerFlow Cloud.",
+      "recommended": true,
+      "integration_type": "Service",
+      "value_proposition": "Integrating with Carketa's inventory management services can help DealerFlow customers manage their inventory more efficiently and potentially increase sales."
+    },
+    {
+      "company_name": "Carvana Co.",
+      "website": "https://www.carvana.com/",
+      "headquarters": "Tempe, Arizona, United States",
+      "locations": [
+        "Nationwide US"
+      ],
+      "size": "Large",
+      "fit_score": 8,
+      "rationale": "Carvana Co. is an established player in the automotive industry and offers services that complement DealerFlow Cloud's core functionality. The integration of Carvana's services would provide added value to dealerships.",
+      "recommended": true,
+      "integration_type": "Service",
+      "value_proposition": "Carvana's online vehicle buying and selling platform can help DealerFlow customers expand their reach and increase sales opportunities."
+    },
+    {
+      "company_name": "J.D. Power",
+      "website": "https://jdpower.com",
+      "headquarters": "Troy, Michigan, United States",
+      "locations": [],
+      "size": "Large",
+      "fit_score": 8,
+      "rationale": "J.D. Power has a strong focus on the automotive industry and offers complementary services such as consumer intelligence and data analytics, which can provide valuable insights to DealerFlow customers.",
+      "recommended": true,
+      "integration_type": "Service",
+      "value_proposition": "Integrating J.D. Power's consumer intelligence and data analytics services can help DealerFlow customers make informed decisions and improve their overall dealership operations."
+    }
+  ]
+}
