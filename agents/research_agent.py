@@ -9,6 +9,7 @@ from typing import List, Dict, Any
 from utils.llm_client import llm_client
 from utils.search_client import search_client
 from utils.document_processor import doc_processor
+from utils.prompt_tracer import prompt_tracer
 
 logger = logging.getLogger(__name__)
 
@@ -114,6 +115,14 @@ class ResearchAgent:
                 system_prompt="You are a B2B market research expert. Generate targeted search queries.",
             )
 
+            # Log prompt and response
+            prompt_tracer.log_prompt(
+                agent_name="ResearchAgent_QueryGeneration",
+                prompt=prompt,
+                response=str(response),
+                metadata={"discovery_type": discovery_type}
+            )
+
             queries = response.get("queries", [])
             strategy = response.get("strategy", "No strategy provided")
 
@@ -124,6 +133,12 @@ class ResearchAgent:
 
         except Exception as e:
             logger.error(f"Failed to generate search queries: {e}")
+            prompt_tracer.log_error(
+                agent_name="ResearchAgent_QueryGeneration",
+                prompt=prompt,
+                error=str(e),
+                metadata={"discovery_type": discovery_type}
+            )
             # Return fallback queries
             return self._get_fallback_queries(discovery_type)
 
@@ -227,6 +242,14 @@ class ResearchAgent:
                 system_prompt="You are a data extraction expert. Extract company names from text.",
             )
 
+            # Log prompt and response
+            prompt_tracer.log_prompt(
+                agent_name="ResearchAgent_CompanyExtraction",
+                prompt=prompt,
+                response=str(response),
+                metadata={"num_companies": len(response.get("companies", []))}
+            )
+
             companies = response.get("companies", [])
             logger.debug(f"Extracted companies: {companies}")
 
@@ -234,6 +257,11 @@ class ResearchAgent:
 
         except Exception as e:
             logger.error(f"Company extraction failed: {e}")
+            prompt_tracer.log_error(
+                agent_name="ResearchAgent_CompanyExtraction",
+                prompt=prompt,
+                error=str(e)
+            )
             return []
 
     def _normalize_company_name(self, name: str) -> str:

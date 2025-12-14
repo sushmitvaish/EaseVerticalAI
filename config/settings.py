@@ -18,14 +18,8 @@ class Settings(BaseSettings):
     # Choose LLM provider: "ollama" or "huggingface"
     llm_provider: str = "ollama"
 
-    # Search API Configuration
+    # Search API Configuration (Tavily AI)
     tavily_api_key: Optional[str] = None
-    serper_api_key: Optional[str] = None
-    google_api_key: Optional[str] = None
-    google_cse_id: Optional[str] = None
-
-    # Search provider: "tavily", "serper", "google", or "duckduckgo"
-    search_provider: str = "duckduckgo"  # Default to free option
 
     # Prompt Tracing
     langfuse_public_key: Optional[str] = None

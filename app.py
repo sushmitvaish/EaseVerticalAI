@@ -9,11 +9,14 @@ import json
 from pathlib import Path
 
 # Setup logging
+# Create logs directory if it doesn't exist
+Path('data/logs').mkdir(parents=True, exist_ok=True)
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('lead_generator.log'),
+        logging.FileHandler('data/logs/lead_generator.log'),
         logging.StreamHandler(sys.stdout)
     ]
 )
@@ -70,7 +73,7 @@ def main():
         st.markdown("""
         **Technology Stack:**
         - LLM: Llama 3.1 / Mistral 7B
-        - Search: DuckDuckGo (free)
+        - Search: Tavily API
         - Framework: LangChain
         - UI: Streamlit
 

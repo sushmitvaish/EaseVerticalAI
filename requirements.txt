@@ -21,9 +21,8 @@ langgraph==0.0.20
 chromadb==0.4.22
 sentence-transformers==2.2.2
 
-# Search APIs
+# Search API
 tavily-python==0.3.0
-duckduckgo-search==4.1.0
 
 # Web scraping (for enrichment)
 requests==2.31.0

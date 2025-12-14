@@ -8,6 +8,7 @@ from typing import Dict, Any, Optional, List
 
 from utils.llm_client import llm_client
 from utils.search_client import search_client
+from utils.prompt_tracer import prompt_tracer
 
 logger = logging.getLogger(__name__)
 
@@ -149,12 +150,26 @@ class EnrichmentAgent:
                 system_prompt="You are a business intelligence analyst. Extract structured company information.",
             )
 
+            # Log prompt and response
+            prompt_tracer.log_prompt(
+                agent_name="EnrichmentAgent",
+                prompt=prompt,
+                response=str(response),
+                metadata={"company_name": company_name}
+            )
+
             # Create CompanyInfo object
             company_info = CompanyInfo(response)
             return company_info
 
         except Exception as e:
             logger.error(f"Failed to extract company info: {e}")
+            prompt_tracer.log_error(
+                agent_name="EnrichmentAgent",
+                prompt=prompt,
+                error=str(e),
+                metadata={"company_name": company_name}
+            )
             return self._create_minimal_info(company_name)
 
     def _create_minimal_info(self, company_name: str) -> CompanyInfo:

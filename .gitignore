@@ -41,8 +41,8 @@ env/
 # Logs
 *.log
 logs/
+data/logs/
 data/prompt_logs/
-lead_generator.log
 
 # Cache
 *.cache

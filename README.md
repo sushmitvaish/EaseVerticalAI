@@ -1,22 +1,53 @@
 # DealerFlow Cloud - AI Lead Generator
 
-An AI-powered B2B lead generation system that discovers potential customers and technology partners for AxleWave Technologies' DealerFlow Cloud platform.
+An AI-powered B2B lead generation system that discovers potential customers and technology partners for automotive dealership management systems.
 
-## 🎯 Overview
+## 🎯 What It Does
 
-This prototype uses **open-source LLMs** (Llama 3.1 / Mistral 7B) and multi-agent architecture to intelligently discover and evaluate:
+Uses **open-source LLMs** (Llama 3.1 / Mistral 7B) and multi-agent architecture to intelligently discover and evaluate:
 
 - **Top 10 Potential Customers**: Automotive dealerships likely to buy DealerFlow Cloud
 - **Top 10 Potential Partners**: Technology companies that could integrate with the platform
 
-### Key Features
+## ✨ Key Features
 
 ✅ **Natural Language Interface** - Specify requirements in plain English
-✅ **Multi-Agent System** - Specialized AI agents for different tasks
-✅ **Open-Source LLMs** - Uses Llama/Mistral via Ollama or HuggingFace
-✅ **Free Search APIs** - DuckDuckGo (no API key needed)
-✅ **Prompt Tracing** - Track and optimize LLM prompts
+✅ **Multi-Agent System** - 5 specialized AI agents working together
+✅ **Open-Source LLMs** - Llama 3.1 / Mistral 7B via Ollama
+✅ **AI-Optimized Search** - Tavily API (1,000 free searches/month)
+✅ **Prompt Tracing** - Track and optimize LLM interactions
+✅ **Smart Filtering** - Parent/subsidiary detection, competitor exclusion
 ✅ **Repeatable Results** - Deterministic prompts and result caching
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Python 3.9+
+- Ollama (local LLM runtime)
+
+### Installation
+
+```bash
+# 1. Install Ollama
+brew install ollama  # macOS
+ollama pull llama3.1:8b
+
+# 2. Clone and setup
+git clone <your-repo-url>
+cd EaseVerticalAI
+./setup.sh
+
+# 3. Add Tavily API key to .env
+TAVILY_API_KEY=your_key_here  # Get free key at https://tavily.com
+
+# 4. Run the app
+streamlit run app.py
+```
+
+Open browser to `http://localhost:8501`
+
+**See [Complete Guide](docs/GUIDE.md) for detailed setup instructions**
 
 ## 🏗️ Architecture
 
@@ -26,345 +57,228 @@ This prototype uses **open-source LLMs** (Llama 3.1 / Mistral 7B) and multi-agen
 User Input (Natural Language)
     ↓
 ┌─────────────────────────┐
-│ Intent Classifier Agent │ → Determines: Customer, Partner, or Both
+│ Intent Classifier Agent │ → Customer / Partner / Both?
 └─────────────────────────┘
     ↓
 ┌─────────────────────────┐
-│ Orchestrator            │ → Coordinates workflow
+│ Research Agent          │ → Generate queries, search, filter
 └─────────────────────────┘
     ↓
 ┌─────────────────────────┐
-│ Research Agent          │ → Generates search queries, discovers companies
+│ Enrichment Agent        │ → Gather company details
 └─────────────────────────┘
     ↓
 ┌─────────────────────────┐
-│ Enrichment Agent        │ → Gathers company details (website, location, size)
+│ Scoring Agent           │ → Evaluate fit, rank results
 └─────────────────────────┘
     ↓
-┌─────────────────────────┐
-│ Scoring Agent           │ → Evaluates fit, generates rationale
-└─────────────────────────┘
-    ↓
-Top 10 Results
+Top 10 Results (JSON)
 ```
 
 ### Technology Stack
 
-**LLM & AI:**
-- **Ollama** (local deployment) or **HuggingFace** API
-- Models: Llama 3.1 (8B), Mistral 7B
-- **LangChain** for agent orchestration
+- **LLM**: Ollama (Llama 3.1 8B / Mistral 7B)
+- **Search**: Tavily AI (AI-optimized for LLMs)
+- **UI**: Streamlit
+- **Language**: Python 3.9+
+- **Caching**: JSON-based results cache
 
-**Search:**
-- **DuckDuckGo Search** (free, no API key)
-- Alternatives: Tavily AI, Google Custom Search, Serper
+## 📊 Sample Results
 
-**Backend:**
-- Python 3.9+
-- FastAPI (API layer)
-- Pydantic (data validation)
-
-**Frontend:**
-- Streamlit (natural language UI)
-
-**Data & Logging:**
-- JSON-based caching
-- Prompt tracing with custom logger
-- LangFuse integration (optional)
-
-## 📋 Installation
-
-### Prerequisites
-
-1. **Python 3.9+**
-2. **Ollama** (recommended) or HuggingFace account
-
-### Step 1: Install Ollama (Local LLM)
-
-**macOS:**
-```bash
-brew install ollama
-ollama pull llama3.1:8b
-# OR
-ollama pull mistral:7b
-```
-
-**Linux:**
-```bash
-curl -fsSL https://ollama.com/install.sh | sh
-ollama pull llama3.1:8b
-```
-
-**Windows:**
-Download from [https://ollama.com](https://ollama.com)
-
-### Step 2: Clone and Setup
-
-```bash
-# Clone repository
-git clone <repo-url>
-cd EaseVerticalAI
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-### Step 3: Configure Environment
-
-```bash
-# Copy example env file
-cp .env.example .env
-
-# Edit .env and configure:
-# - LLM provider (ollama or huggingface)
-# - Search provider (duckduckgo, tavily, google, or serper)
-# - API keys (if using paid services)
-```
-
-**Minimal .env for free tier:**
-```bash
-LLM_PROVIDER=ollama
-OLLAMA_BASE_URL=http://localhost:11434
-OLLAMA_MODEL=llama3.1:8b
-
-SEARCH_PROVIDER=duckduckgo
-CACHE_RESULTS=true
-```
-
-### Step 4: Initialize Company Context
-
-```bash
-python -c "from utils.document_processor import doc_processor; doc_processor.save_context()"
-```
-
-## 🚀 Usage
-
-### Option 1: Streamlit UI (Recommended)
-
-```bash
-streamlit run app.py
-```
-
-Then:
-1. Open browser to `http://localhost:8501`
-2. Enter your request in natural language:
-   - "Find me potential customers"
-   - "Who could we partner with?"
-   - "Generate both lists"
-3. Click "Generate Leads"
-4. View and download results
-
-### Option 2: Python API
-
-```python
-from orchestrator import orchestrator
-
-# Generate customer leads
-results = orchestrator.generate_leads(
-    user_input="Find automotive dealerships that need DMS software",
-    discovery_type="customer"  # or "partner" or "both"
-)
-
-# Access results
-customers = results['results']['customers']
-for company in customers:
-    print(f"{company['company_name']}: {company['fit_score']}/10")
-    print(f"Rationale: {company['rationale']}\n")
-```
-
-### Option 3: Command Line
-
-```bash
-python -m orchestrator "Find me potential customers"
-```
-
-## 📊 Output Format
-
-Each discovered company includes:
-
+### Customer Results
 ```json
 {
   "company_name": "AutoNation Inc.",
   "website": "https://www.autonation.com",
-  "headquarters": "Fort Lauderdale, Florida",
-  "locations": ["Nationwide - 300+ locations"],
+  "headquarters": "Fort Lauderdale, Florida, United States",
   "size": "Large",
-  "fit_score": 9.5,
-  "rationale": "Largest automotive retailer in US with 300+ dealerships...",
-  "recommended": true,
-  "key_strengths": [
-    "Multi-location dealer group",
-    "Modern technology focus"
-  ]
+  "fit_score": 9,
+  "rationale": "AutoNation is the largest automotive retailer...",
+  "recommended": true
 }
 ```
 
-## 🧪 Testing
-
-```bash
-# Run basic test
-python test_workflow.py
-
-# Test individual agents
-python -m agents.intent_classifier
-python -m agents.research_agent
+### Partner Results
+```json
+{
+  "company_name": "Carfax",
+  "website": "https://www.carfax.com",
+  "headquarters": "Centreville, Virginia, United States",
+  "size": "Medium",
+  "fit_score": 8,
+  "rationale": "Carfax provides critical vehicle history...",
+  "integration_type": "Data",
+  "value_proposition": "Integrating Carfax will provide..."
+}
 ```
+
+See [cached results](data/results_cache/) for complete examples.
 
 ## 📁 Project Structure
 
 ```
 EaseVerticalAI/
-├── agents/                      # AI Agent implementations
-│   ├── intent_classifier.py    # Classifies user intent
-│   ├── research_agent.py        # Discovers companies via search
-│   ├── enrichment_agent.py      # Enriches company details
-│   └── scoring_agent.py         # Scores and ranks companies
-├── utils/                       # Utility modules
-│   ├── llm_client.py           # Open-source LLM client
-│   ├── search_client.py        # Multi-provider search client
-│   ├── document_processor.py   # Process AxleWave docs
-│   └── prompt_tracer.py        # Prompt logging & tracing
-├── prompts/                     # LLM prompt templates
-│   ├── intent_classifier.txt
-│   ├── customer_discovery.txt
+├── agents/                     # AI agents
+│   ├── intent_classifier.py   # Classify user intent
+│   ├── research_agent.py      # Discover companies
+│   ├── enrichment_agent.py    # Gather details
+│   └── scoring_agent.py       # Evaluate & rank
+├── prompts/                    # LLM prompts
 │   ├── partner_discovery.txt
-│   ├── company_extraction.txt
-│   ├── company_enrichment.txt
-│   ├── customer_scoring.txt
-│   └── partner_scoring.txt
-├── config/                      # Configuration
-│   └── settings.py             # App settings
-├── data/                        # Data storage
-│   ├── axlewave_context/       # Company context
-│   ├── results_cache/          # Cached results
-│   └── prompt_logs/            # Prompt traces
-├── orchestrator.py              # Main agent coordinator
-├── app.py                       # Streamlit UI
-├── requirements.txt             # Python dependencies
-├── .env.example                # Environment template
-└── README.md                    # This file
+│   ├── partner_scoring.txt
+│   ├── customer_discovery.txt
+│   └── customer_scoring.txt
+├── utils/
+│   ├── llm_client.py          # Ollama interface
+│   ├── search_client.py       # Tavily search
+│   └── prompt_tracer.py       # Prompt logging
+├── data/
+│   ├── logs/                  # Application logs
+│   ├── prompt_logs/           # LLM traces
+│   ├── results_cache/         # Cached results
+│   └── axlewave_context/      # Company context
+├── docs/
+│   └── GUIDE.md              # Complete guide
+├── orchestrator.py            # Main orchestrator
+├── app.py                     # Streamlit UI
+└── README.md                  # This file
 ```
+
+## 🎮 Usage
+
+### Natural Language Queries
+
+```
+"Find me 10 automotive dealerships that would buy DealerFlow Cloud"
+"Show me technology partners for vehicle history and valuation"
+"Find me both customers and partners"
+```
+
+### Predefined Queries
+
+Use buttons in the Streamlit UI:
+- **Top 10 Potential Customers** - Find dealer groups
+- **Top 10 Technology Partners** - Find integration partners
+- **Both Customers and Partners** - Combined search
 
 ## 🔧 Configuration
 
-### LLM Providers
+Edit `.env` file:
 
-**Ollama (Local - Recommended):**
 ```bash
-LLM_PROVIDER=ollama
-OLLAMA_MODEL=llama3.1:8b  # or mistral:7b, mixtral:8x7b
+# LLM
+OLLAMA_BASE_URL=http://localhost:11434
+OLLAMA_MODEL=llama3.1:8b
+
+# Search
+TAVILY_API_KEY=your_key_here
+
+# Settings
+LOG_LEVEL=INFO
+CACHE_RESULTS=true
+MAX_COMPANIES_TO_ANALYZE=30
 ```
 
-**HuggingFace (Cloud):**
-```bash
-LLM_PROVIDER=huggingface
-HUGGINGFACE_API_TOKEN=your_token
-HUGGINGFACE_MODEL=mistralai/Mistral-7B-Instruct-v0.2
-```
+Customize company profile: `data/axlewave_context/company_context.json`
 
-### Search Providers
+## 🎯 Key Features Explained
 
-**DuckDuckGo (Free, No API Key):**
-```bash
-SEARCH_PROVIDER=duckduckgo
-```
+### Smart Filtering
+- **Parent/subsidiary detection**: "AutoNation Inc." filters out "AutoNation Honda Chandler"
+- **Fuzzy duplicate detection**: "Lithia Motors" and "Lithia & Driveway" recognized as same company
+- **Competitor exclusion**: 16 DMS competitors filtered (CDK Global, Reynolds & Reynolds, etc.)
 
-**Tavily (1000 free requests/month):**
-```bash
-SEARCH_PROVIDER=tavily
-TAVILY_API_KEY=your_key
-```
-
-**Google Custom Search (100 free/day):**
-```bash
-SEARCH_PROVIDER=google
-GOOGLE_API_KEY=your_key
-GOOGLE_CSE_ID=your_cse_id
-```
-
-## 📈 Performance
-
-**Typical Execution Times:**
-- Intent Classification: 2-5 seconds
-- Research (discovering 30 companies): 30-60 seconds
-- Enrichment (30 companies): 60-120 seconds
-- Scoring (30 companies): 60-90 seconds
-
-**Total: ~3-5 minutes** for complete workflow (both customers and partners)
-
-**Optimizations:**
-- Result caching for repeated queries
-- Parallel search execution
-- Temperature=0 for deterministic outputs
-
-## 🎓 Prompt Engineering
-
-### Strategies Used
-
-1. **Structured Output**: JSON mode for consistent responses
-2. **Few-Shot Learning**: Examples in prompts for better results
-3. **Chain of Thought**: LLM explains reasoning
-4. **Prompt Templates**: Reusable, documented prompts
-5. **Tracing**: Log all prompts for optimization
-
-### View Prompt Traces
-
+### Prompt Tracing
+All LLM interactions logged to `data/prompt_logs/session_*.jsonl`:
 ```python
 from utils.prompt_tracer import prompt_tracer
 report = prompt_tracer.generate_report()
-print(report)
 ```
 
-## 🚢 Deployment Considerations
+### Results Caching
+Results saved to `data/results_cache/`:
+- `customer_YYYYMMDD_HHMMSS.json`
+- `partner_YYYYMMDD_HHMMSS.json`
 
-### For Production:
+## 📈 Performance
 
-**Security:**
-- [ ] Environment variable management (AWS Secrets Manager, etc.)
-- [ ] API authentication and rate limiting
-- [ ] Input validation and sanitization
-- [ ] HTTPS only
+**Typical execution time:**
+- Intent classification: 1-2 seconds
+- Research (30 companies): 30-60 seconds
+- Enrichment (30 companies): 60-90 seconds
+- Scoring (30 companies): 30-45 seconds
+- **Total: ~2-3 minutes for 10 results**
 
-**Scalability:**
-- [ ] Horizontal scaling with load balancer
-- [ ] Redis for distributed caching
-- [ ] Message queue for async processing (Celery + RabbitMQ)
-- [ ] Database for persistent storage (PostgreSQL)
+**Optimizations:**
+- Results caching
+- Parallel search execution
+- Early filtering (40% fewer enrichment calls)
+- Smart duplicate detection
 
-**Performance:**
-- [ ] GPU acceleration for local LLMs
-- [ ] CDN for static assets
-- [ ] Search result caching
-- [ ] Batch processing for multiple requests
+## 📚 Documentation
 
-**Monitoring:**
-- [ ] Application logging (ELK stack)
-- [ ] Performance metrics (Prometheus + Grafana)
-- [ ] Error tracking (Sentry)
-- [ ] LLM cost tracking
+- **[Complete Guide](docs/GUIDE.md)** - Setup, architecture, usage, development
+- **[Example Results](data/results_cache/)** - Customer & partner results
 
-**AI Enhancements:**
-- [ ] Fine-tune LLM on domain data
-- [ ] Implement retrieval-augmented generation (RAG)
-- [ ] Add feedback loop for continuous improvement
-- [ ] A/B test different prompts
+## 🧪 Testing
+
+Verify setup:
+```bash
+python test_setup.py
+```
+
+Test individual agents:
+```bash
+python -m agents.research_agent
+python -m agents.scoring_agent
+```
+
+## 🐛 Troubleshooting
+
+**Ollama not running:**
+```bash
+ollama serve
+ollama list  # Should show llama3.1:8b
+```
+
+**Tavily API errors:**
+- Check API key in `.env`
+- Verify quota at https://tavily.com/dashboard
+- Free tier: 1,000 searches/month
+
+**Poor results:**
+1. Check logs: `data/logs/lead_generator.log`
+2. Review prompt traces: `data/prompt_logs/`
+3. Adjust prompts in `prompts/` directory
+
+See [Complete Guide](docs/GUIDE.md) for detailed troubleshooting.
+
+## 🎓 How It Works
+
+1. **User input** → Intent Classifier determines customer/partner/both
+2. **Research Agent** → Generates 6-8 search queries, executes Tavily searches
+3. **Smart filtering** → Removes competitors, duplicates, subsidiaries
+4. **Enrichment Agent** → Gathers company details (website, HQ, size)
+5. **Scoring Agent** → Evaluates fit (0-10), generates rationale
+6. **Top 10 results** → Cached and displayed
+
+## 🚀 Next Steps
+
+After installation:
+1. Run predefined queries to see results
+2. Explore cached results in `data/results_cache/`
+3. Review prompt traces in `data/prompt_logs/`
+4. Customize prompts in `prompts/` directory
+5. Edit company profile in `data/axlewave_context/`
 
 ## 📝 License
 
-This project is the property of Ease Vertical AI, Inc. © 2025
+MIT License - See LICENSE file for details
 
 ## 🤝 Contributing
 
-This is a take-home assignment submission. Not accepting external contributions.
-
-## 📧 Contact
-
-For questions: engage@easeverticalai.com
+This is a prototype/assignment project. For questions or improvements, please open an issue.
 
 ---
 
-**Built using Open-Source LLMs**
+**Built with:** Ollama (Llama 3.1) • Tavily AI • Streamlit • Python 3.9+

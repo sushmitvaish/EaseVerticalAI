@@ -9,6 +9,7 @@ from dataclasses import dataclass
 
 from utils.llm_client import llm_client
 from utils.document_processor import doc_processor
+from utils.prompt_tracer import prompt_tracer
 from agents.enrichment_agent import CompanyInfo
 
 logger = logging.getLogger(__name__)
@@ -86,6 +87,14 @@ class ScoringAgent:
                 system_prompt="You are a B2B sales analyst. Evaluate customer fit.",
             )
 
+            # Log prompt and response
+            prompt_tracer.log_prompt(
+                agent_name="ScoringAgent_Customer",
+                prompt=prompt,
+                response=str(response),
+                metadata={"company_name": company_info.company_name, "type": "customer"}
+            )
+
             # Create ScoringResult
             result = ScoringResult(
                 company_name=company_info.company_name,
@@ -103,6 +112,12 @@ class ScoringAgent:
 
         except Exception as e:
             logger.error(f"Customer scoring failed: {e}")
+            prompt_tracer.log_error(
+                agent_name="ScoringAgent_Customer",
+                prompt=prompt,
+                error=str(e),
+                metadata={"company_name": company_info.company_name, "type": "customer"}
+            )
             return self._create_default_score(company_info.company_name)
 
     def score_partner(self, company_info: CompanyInfo) -> ScoringResult:
@@ -137,6 +152,14 @@ class ScoringAgent:
                 system_prompt="You are a partnership strategy analyst. Evaluate partner fit.",
             )
 
+            # Log prompt and response
+            prompt_tracer.log_prompt(
+                agent_name="ScoringAgent_Partner",
+                prompt=prompt,
+                response=str(response),
+                metadata={"company_name": company_info.company_name, "type": "partner"}
+            )
+
             # Create ScoringResult
             result = ScoringResult(
                 company_name=company_info.company_name,
@@ -154,6 +177,12 @@ class ScoringAgent:
 
         except Exception as e:
             logger.error(f"Partner scoring failed: {e}")
+            prompt_tracer.log_error(
+                agent_name="ScoringAgent_Partner",
+                prompt=prompt,
+                error=str(e),
+                metadata={"company_name": company_info.company_name, "type": "partner"}
+            )
             return self._create_default_score(company_info.company_name)
 
     def score_and_rank(

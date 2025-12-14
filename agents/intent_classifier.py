@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Dict, Any
 
 from utils.llm_client import llm_client
+from utils.prompt_tracer import prompt_tracer
 
 logger = logging.getLogger(__name__)
 
@@ -62,6 +63,14 @@ Respond with JSON:
                 system_prompt="You are an intent classification system. Always respond with valid JSON.",
             )
 
+            # Log prompt and response
+            prompt_tracer.log_prompt(
+                agent_name="IntentClassifier",
+                prompt=prompt,
+                response=str(response),
+                metadata={"user_input": user_input[:200]}
+            )
+
             # Validate response structure
             required_fields = ["intent", "confidence", "reasoning"]
             if not all(field in response for field in required_fields):
@@ -80,6 +89,12 @@ Respond with JSON:
 
         except Exception as e:
             logger.error(f"Intent classification failed: {e}")
+            prompt_tracer.log_error(
+                agent_name="IntentClassifier",
+                prompt=prompt,
+                error=str(e),
+                metadata={"user_input": user_input[:200]}
+            )
             return self._get_default_intent()
 
     def _get_default_intent(self) -> Dict[str, Any]:
