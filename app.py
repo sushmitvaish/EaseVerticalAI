@@ -86,6 +86,10 @@ def main():
     # Main interface
     st.header("🎯 Discover Leads")
 
+    # Initialize variables
+    user_input = None
+    generate_button = False
+
     # Input method selection
     input_tab1, input_tab2 = st.tabs(["Natural Language", "Predefined Queries"])
 
@@ -95,12 +99,14 @@ def main():
         user_input = st.text_area(
             "Your Request",
             placeholder="Examples:\n- Find me potential customers for our dealership management system\n- Who could we partner with to enhance our platform?\n- Generate both customer and partner lists",
-            height=100
+            height=100,
+            key="natural_language_input"
         )
 
         col1, col2 = st.columns([1, 4])
         with col1:
-            generate_button = st.button("🚀 Generate Leads", type="primary", use_container_width=True)
+            if st.button("🚀 Generate Leads", type="primary", use_container_width=True):
+                generate_button = True
 
     with input_tab2:
         st.markdown("**Or choose a predefined query:**")
@@ -116,8 +122,6 @@ def main():
         if st.button("🚀 Run Predefined Query", use_container_width=True):
             user_input = predefined_queries[selected_query]
             generate_button = True
-        else:
-            generate_button = False
 
     # Process request
     if generate_button and user_input:
